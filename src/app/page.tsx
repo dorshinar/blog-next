@@ -4,9 +4,19 @@ import profilePic from "./profile-pic.jpg";
 import { GithubIcon, TwitterIcon } from "lucide-react";
 
 import { meta as linting } from "./posts/linting-your-react-typescript-project-with-eslint-and-prettier/page.mdx";
+import lintingCover from "./posts/linting-your-react-typescript-project-with-eslint-and-prettier/cover.png";
 import { meta as jestSnapshots } from "./posts/why-i-stopped-writing-jest-snapshot-tests/page.mdx";
 import { meta as buildingABlog } from "./posts/building-a-personal-blog/page.mdx";
+import blogCover from "./posts/building-a-personal-blog/cover.png";
 import { meta as impossibleState } from "./posts/avoid-impossible-state-with-typescript/page.mdx";
+import impossibleStateCover from "./posts/avoid-impossible-state-with-typescript/cover.jpeg";
+import { meta as perfectTeammate } from "./posts/be-the-perfect-teammate/page.mdx";
+import perfectTeammateCover from "./posts/be-the-perfect-teammate/cover.jpg";
+import { meta as themes } from "./posts/themes-using-css-variables-and-react-context/page.mdx";
+import themesCover from "./posts/themes-using-css-variables-and-react-context/cover.png";
+import { meta as ci } from "./posts/continuous-integration-with-github-actions-and-puppeteer/page.mdx";
+import { meta as guardedCity } from "./posts/guarded-city-with-no-defensive-wall-typescript/page.mdx";
+import guardedCityCover from "./posts/guarded-city-with-no-defensive-wall-typescript/cover.jpg";
 import { PostSchema } from "@/types/Post";
 import { z } from "zod";
 import { PostPreview } from "../components/post-preview";
@@ -15,10 +25,14 @@ const PostsSchema = z.array(PostSchema);
 
 export default function Home() {
   const posts = PostsSchema.parse([
-    linting,
+    { ...linting, cover: lintingCover },
     jestSnapshots,
-    buildingABlog,
-    impossibleState,
+    { ...buildingABlog, cover: blogCover },
+    { ...impossibleState, cover: impossibleStateCover },
+    { ...perfectTeammate, cover: perfectTeammateCover },
+    { ...themes, cover: themesCover },
+    { ...ci },
+    { ...guardedCity, cover: guardedCityCover },
   ]).sort((first, second) => (first.date > second.date ? -1 : 1));
 
   return (
@@ -61,9 +75,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-8 px-4 sm:px-8 sm:max-w-3xl">
+      <section className="flex flex-col gap-12 px-4 sm:px-8 sm:max-w-3xl pb-8">
         {posts.map((post) => (
-          <PostPreview post={post} key={post.slug} />
+          <PostPreview post={post} key={post.slug} cover={post.cover} />
         ))}
       </section>
     </>

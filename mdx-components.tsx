@@ -1,11 +1,8 @@
 import clsx from "clsx";
 import type { MDXComponents } from "mdx/types";
 
-// This file is required to use MDX in `app` directory.
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    // Allows customizing built-in components, e.g. to add styling.
-    // h1: ({ children }) => <h1 style={{ fontSize: "100px" }}>{children}</h1>,
     ...components,
     pre: (props) => (
       <pre
@@ -19,9 +16,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         className={clsx(props.className, "text-emerald-500 underline")}
       />
     ),
-    // code: (props) => (
-    //   <code {...props} className={clsx(props.className, "bg-[#0d1117] p-px")} />
-    // ),
     h2: (props) => (
       <h2 {...props} className={clsx(props.className, "text-lg font-bold")} />
     ),
@@ -38,6 +32,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           props.className,
           "list-decimal px-4 flex flex-col gap-2"
         )}
+      />
+    ),
+    ul: (props) => (
+      <ul
+        {...props}
+        className={clsx(props.className, "list-disc px-4 flex flex-col gap-2")}
       />
     ),
   };

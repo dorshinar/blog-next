@@ -7,6 +7,7 @@ export const PostSchema = z.object({
   description: z.string(),
   published: z.boolean(),
   slug: z.string(),
+  cover: z.any(),
 });
 
 export type PostMeta = z.infer<typeof PostSchema>;

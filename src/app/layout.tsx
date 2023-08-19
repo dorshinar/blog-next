@@ -26,7 +26,12 @@ export default function RootLayout({
       >
         <header className="h-16 flex justify-center items-center bg-zinc-800 w-full">
           <h1 className="grow sm:max-w-3xl px-4 sm:px-8 text-2xl font-medium">
-            <Link href="/">Dor Shinar</Link>
+            <Link
+              href="/"
+              className="hover:text-emerald-500 focus-visible:text-emerald-500"
+            >
+              Dor Shinar
+            </Link>
           </h1>
         </header>
         <main className="flex w-full flex-col items-center overflow-hidden">
