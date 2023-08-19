@@ -18,16 +18,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, "min-h-screen flex flex-col")}>
-        <header className="h-16 flex items-center bg-slate-600 w-full p-6">
-          <h1>
+      <body
+        className={clsx(
+          inter.className,
+          "min-h-screen flex flex-col gap-12 items-center bg-zinc-900 text-zinc-200 pb-2"
+        )}
+      >
+        <header className="h-16 flex justify-center items-center bg-zinc-800 w-full">
+          <h1 className="grow sm:max-w-3xl px-4 sm:px-8 text-2xl font-medium">
             <Link href="/">Dor Shinar</Link>
           </h1>
         </header>
-        <main className="flex grow flex-col items-center">{children}</main>
-        <footer className="">
-          © {new Date().getFullYear()} Dor Shinar, built with{" "}
-          <Link href="https://nextjs.org/">Next.js</Link>
+        <main className="flex w-full flex-col items-center overflow-hidden">
+          {children}
+        </main>
+        <footer className="flex items-center justify-center w-full">
+          <span className="flex-1 sm:max-w-3xl px-4 sm:px-8">
+            © {new Date().getFullYear()} Dor Shinar, built with{" "}
+            <Link href="https://nextjs.org/">Next.js</Link>
+          </span>
         </footer>
       </body>
     </html>

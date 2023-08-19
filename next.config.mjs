@@ -1,4 +1,5 @@
 import mdx from "@next/mdx";
+import rehypePrettyCode from "rehype-pretty-code";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,10 +7,11 @@ const nextConfig = {
   reactStrictMode: true,
 };
 
+/** @type {import('rehype-pretty-code').Options} */
+const prettyCodeOptions = {};
+
 const withMDX = mdx({
-  options: {
-    extension: /\.mdx?$/,
-  },
   extension: /\.mdx?$/,
+  options: { rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]] },
 });
 export default withMDX(nextConfig);
