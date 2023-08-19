@@ -198,7 +198,7 @@ Now that we know how to work with union types, we can use them to our advantage 
 
 Instead of using a single interface for all the possible states of the request, we can split them up, each having their own unique fields.
 
-```typescript
+```typescript {11,14-17}
 interface PendingLoadingIndicatorProps {
   state: "PENDING";
 }
@@ -209,16 +209,13 @@ interface SuccessfulLoadingIndicatorProps {
 
 interface FailedLoadingIndicatorProps {
   state: "FAILED";
-  // highlight-next-line
   message: string;
 }
 
-// highlight-start
 type RequestLoadingIndicatorProps =
   | PendingLoadingIndicatorProps
   | SuccessfulLoadingIndicatorProps
   | FailedLoadingIndicatorProps;
-// highlight-end
 ```
 
 The highlighted part is where the magic happens. With it we specify all the different types of props we accept, and only allow a message on `FAILED` requests.
@@ -275,14 +272,13 @@ See how quickly it gets out of hand?
 
 Our union types make this a non-issue:
 
-```typescript
+```typescript {7}
 interface PendingLoadingIndicatorProps {
   state: "PENDING";
 }
 
 interface SuccessfulLoadingIndicatorProps {
   state: "SUCCESSFUL";
-  // highlight-next-line
   onAnimationEnd?: () => void;
 }
 

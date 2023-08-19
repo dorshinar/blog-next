@@ -31,5 +31,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         className={clsx(props.className, "border-l-8 p-4 border-zinc-500")}
       />
     ),
+    ol: (props) => (
+      <ol
+        {...props}
+        className={clsx(
+          props.className,
+          "list-decimal px-4 flex flex-col gap-2"
+        )}
+      />
+    ),
   };
 }

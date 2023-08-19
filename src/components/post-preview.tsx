@@ -8,7 +8,7 @@ interface Props {
 export function PostPreview({ post }: Props) {
   return (
     <article key={post.slug} className="rounded-lg overflow-hidden w-full">
-      <h2 className="text-zinc-200 text-2xl font-medium">
+      <h2 className="text-zinc-200 text-2xl font-medium hover:text-emerald-500 focus-within:text-emerald-500">
         <Link href={`posts/${post.slug}`}>{post.title}</Link>
       </h2>
       <span className="text-zinc-400 text-sm">

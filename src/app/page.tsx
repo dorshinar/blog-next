@@ -43,10 +43,18 @@ export default function Home() {
           </p>
 
           <address className="flex w-full flex-row justify-start gap-2">
-            <Link href={`https://github.com/dorshinar`} aria-label={"Github"}>
+            <Link
+              href={`https://github.com/dorshinar`}
+              aria-label={"Github"}
+              className="focus-within:text-emerald-500 hover:text-emerald-500"
+            >
               <GithubIcon />
             </Link>
-            <Link href={`https://twitter.com/DorShinar`} aria-label={"Twitter"}>
+            <Link
+              href={`https://twitter.com/DorShinar`}
+              aria-label={"Twitter"}
+              className="focus-within:text-emerald-500 hover:text-emerald-500"
+            >
               <TwitterIcon />
             </Link>
           </address>
