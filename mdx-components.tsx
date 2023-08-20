@@ -19,6 +19,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h2: (props) => (
       <h2 {...props} className={clsx(props.className, "text-lg font-bold")} />
     ),
+    h3: (props) => (
+      <h2 {...props} className={clsx(props.className, "text-lg font-medium")} />
+    ),
     blockquote: (props) => (
       <blockquote
         {...props}

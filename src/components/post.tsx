@@ -4,10 +4,9 @@ import { PropsWithChildren } from "react";
 
 interface Props {
   meta: PostMeta;
-  cover?: StaticImageData;
 }
 
-export function Post({ children, meta, cover }: PropsWithChildren<Props>) {
+export function Post({ children, meta }: PropsWithChildren<Props>) {
   return (
     <article className="flex flex-col gap-6 w-full overflow-hidden px-4 sm:px-8 sm:max-w-3xl">
       <header className="flex flex-col">
@@ -18,7 +17,7 @@ export function Post({ children, meta, cover }: PropsWithChildren<Props>) {
           )}
         </small>
       </header>
-      {cover && <Image src={cover} alt="cover image" />}
+      {meta.cover && <Image src={meta.cover} alt="cover image" />}
       {children}
     </article>
   );
