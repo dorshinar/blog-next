@@ -1,4 +1,6 @@
+import { Message } from "@/components/message";
 import clsx from "clsx";
+import { LinkIcon } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -17,17 +19,42 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       />
     ),
     h2: (props) => (
-      <h2 {...props} className={clsx(props.className, "text-lg font-bold")} />
+      <h2
+        {...props}
+        className={clsx(
+          props.className,
+          "text-lg font-bold group flex gap-2 items-center"
+        )}
+      >
+        {props.children}
+        <a
+          href={`#${props.id}`}
+          aria-hidden
+          className="sr-only group-hover:not-sr-only group-focus-within:no-sr-only"
+        >
+          <LinkIcon size={18} />
+        </a>
+      </h2>
     ),
     h3: (props) => (
-      <h2 {...props} className={clsx(props.className, "text-lg font-medium")} />
-    ),
-    blockquote: (props) => (
-      <blockquote
+      <h2
         {...props}
-        className={clsx(props.className, "border-l-8 p-4 border-zinc-500")}
-      />
+        className={clsx(
+          props.className,
+          "text-lg font-medium group flex gap-2 items-center"
+        )}
+      >
+        {props.children}
+        <a
+          href={`#${props.id}`}
+          aria-hidden
+          className="sr-only group-hover:not-sr-only group-focus-within:no-sr-only"
+        >
+          <LinkIcon size={18} />
+        </a>
+      </h2>
     ),
+    blockquote: Message,
     ol: (props) => (
       <ol
         {...props}

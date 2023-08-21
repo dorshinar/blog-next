@@ -146,7 +146,7 @@ console.log(sumOrThrowIfLowerThan(arr, 10)); // output guaranteed to be a number
 
 Even though we perform no run-time validation, we can be very certain that out functions will not misbehave.
 
-Since we have compile time values here only, we can ensure that our array will contain only numbers, and their sum will behave like we expect (unlike adding a number to a string: `javascript>1 + "1" === "11"`).
+Since we have compile time values here only, we can ensure that our array will contain only numbers, and their sum will behave like we expect (unlike adding a number to a string: `1 + "1" === "11"{:js}`).
 
 However, the real problem arises when our input comes from sources we can't control, most notably fetch requests or a dependency.
 
