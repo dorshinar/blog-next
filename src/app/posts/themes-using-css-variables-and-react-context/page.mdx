@@ -10,6 +10,13 @@ export const meta = {
   published: true,
 };
 
+import { getPostMetadata } from "@/utils/get-metadata";
+import { PostHeader } from "@/components/post-header";
+
+export const metadata = getPostMetadata(meta);
+
+<PostHeader meta={meta} />
+
 CSS variables are really cool. You can use them for a lot of things, one of which is applying themes in your application with ease. In this tutorial I'll show you how to integrate them with react to create a `ThemeComponent` (with context!).
 
 ## CSS Variables in a Gist

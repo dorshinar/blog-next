@@ -11,6 +11,12 @@ import Image from "next/image";
 import Start from "./github-actions-start.png";
 import Branch from "./github-settings-branch.png";
 import Protections from "./github-actions-protections.png";
+import { getPostMetadata } from "@/utils/get-metadata";
+import { PostHeader } from "@/components/post-header";
+
+export const metadata = getPostMetadata(meta);
+
+<PostHeader meta={meta} />
 
 Lately I've added continuous integration to my blog using puppeteer for end to end testing. My main goal was to allow automatic dependency update using [Dependabot](https://dependabot.com/).
 

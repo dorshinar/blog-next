@@ -13,6 +13,12 @@ export const meta = {
 import Image from "next/image";
 import messageDoesNotExist from "./message-does-not-exist.png";
 import messageNotFailed from "./message-with-state-not-failed.png";
+import { getPostMetadata } from "@/utils/get-metadata";
+import { PostHeader } from "@/components/post-header";
+
+export const metadata = getPostMetadata(meta);
+
+<PostHeader meta={meta} />
 
 I love [TypeScript](https://www.typescriptlang.org/). I've been using it for over 2 years in various projects, and the more I use it the less compelling I find vanilla Javascript.
 

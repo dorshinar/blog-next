@@ -13,6 +13,12 @@ export const meta = {
 import Image from "next/image";
 import Fort from "./cover.jpg";
 import Runtime from "./runtime-error.png";
+import { getPostMetadata } from "@/utils/get-metadata";
+import { PostHeader } from "@/components/post-header";
+
+export const metadata = getPostMetadata(meta);
+
+<PostHeader meta={meta} />
 
 TypeScript is huge right now. It's exploding in popularity - as of today, it has almost 10M weekly downloads from [NPM](https://www.npmjs.com/package/typescript), their [repo](https://github.com/microsoft/TypeScript) has nearly 60K stars and it feels like everybody jumps on the bandwagon when it comes to static type checking.
 

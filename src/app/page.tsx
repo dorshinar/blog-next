@@ -16,6 +16,8 @@ import { meta as ci } from "./posts/continuous-integration-with-github-actions-a
 import { meta as guardedCity } from "./posts/guarded-city-with-no-defensive-wall-typescript/page.mdx";
 import { meta as githubActions } from "./posts/creating-github-actions/page.mdx";
 import { meta as infiniteScroll } from "./posts/infinite-scroll-hook/page.mdx";
+import { Metadata } from "next";
+import { getMetadata } from "@/utils/get-metadata";
 
 const PostsSchema = z.array(PostSchema);
 
@@ -88,3 +90,13 @@ export default function Home() {
     </>
   );
 }
+
+export const metadata: Metadata = {
+  ...getMetadata({
+    title: "Dor Shinar",
+    description: "My Personal blog for thoughts.",
+    slug: "",
+    images: [profilePic],
+  }),
+  metadataBase: new URL("https://dorshinar.me"),
+};

@@ -15,6 +15,12 @@ import MyBlog from "./cover.png";
 import DarkMode from "./dark-mode-all-the-things.jpg";
 import NowVsNetlify from "./now-netlify.png";
 import Lighthouse from "./lighthouse.png";
+import { getPostMetadata } from "@/utils/get-metadata";
+import { PostHeader } from "@/components/post-header";
+
+export const metadata = getPostMetadata(meta);
+
+<PostHeader meta={meta} />
 
 It all started from the beginning of 2019w. It was a gloomy day at the office as I was struggling to get ESLint and Prettier to work nicely with React and Typescript. After battling with it for a couple of hours, I've decided to [write an article about it](https://dorshinar.me/linting-your-react+typescript-project-with-eslint-and-prettier).
 

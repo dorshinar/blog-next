@@ -16,6 +16,12 @@ export const meta = {
 import { ColorShiftingBox } from "./ColorShiftingBox";
 import { SimpleListContainer } from "./SimpleListContainer";
 import { ListWithHookContainer } from "./ListWithHookContainer";
+import { getPostMetadata } from "@/utils/get-metadata";
+import { PostHeader } from "@/components/post-header";
+
+export const metadata = getPostMetadata(meta);
+
+<PostHeader meta={meta} />
 
 Often we want to render lists of items. It could be Facebook posts, articles in this very own blog, or products on an e-commerce site.
 

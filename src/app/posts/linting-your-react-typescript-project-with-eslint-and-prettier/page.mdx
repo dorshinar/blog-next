@@ -12,6 +12,12 @@ export const meta = {
 
 import Image from "next/image";
 import featured from "./cover.png";
+import { getPostMetadata } from "@/utils/get-metadata";
+import { PostHeader } from "@/components/post-header";
+
+export const metadata = getPostMetadata(meta);
+
+<PostHeader meta={meta} />
 
 Lately we started a new project at work, written in React + Typescript. Of course, like any other project we wanted it to be automatically linted and style checked, so we don’t have to worry about that ourselves.
 
