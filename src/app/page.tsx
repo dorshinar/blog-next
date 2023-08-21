@@ -2,38 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import profilePic from "./profile-pic.jpg";
 import { GithubIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
-import { PostSchema } from "@/types/Post";
-import { z } from "zod";
 import { PostPreview } from "../components/post-preview";
-
-import { meta as linting } from "./posts/linting-your-react-typescript-project-with-eslint-and-prettier/page.mdx";
-import { meta as jestSnapshots } from "./posts/why-i-stopped-writing-jest-snapshot-tests/page.mdx";
-import { meta as buildingABlog } from "./posts/building-a-personal-blog/page.mdx";
-import { meta as impossibleState } from "./posts/avoid-impossible-state-with-typescript/page.mdx";
-import { meta as perfectTeammate } from "./posts/be-the-perfect-teammate/page.mdx";
-import { meta as themes } from "./posts/themes-using-css-variables-and-react-context/page.mdx";
-import { meta as ci } from "./posts/continuous-integration-with-github-actions-and-puppeteer/page.mdx";
-import { meta as guardedCity } from "./posts/guarded-city-with-no-defensive-wall-typescript/page.mdx";
-import { meta as githubActions } from "./posts/creating-github-actions/page.mdx";
-import { meta as infiniteScroll } from "./posts/infinite-scroll-hook/page.mdx";
 import { Metadata } from "next";
 import { getMetadata } from "@/utils/get-metadata";
-
-const PostsSchema = z.array(PostSchema);
+import { getPosts } from "../utils/get-posts";
 
 export default function Home() {
-  const posts = PostsSchema.parse([
-    linting,
-    jestSnapshots,
-    buildingABlog,
-    impossibleState,
-    perfectTeammate,
-    themes,
-    ci,
-    guardedCity,
-    githubActions,
-    infiniteScroll,
-  ]).sort((first, second) => (first.date > second.date ? -1 : 1));
+  const posts = getPosts();
 
   return (
     <>

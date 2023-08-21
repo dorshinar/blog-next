@@ -1,7 +1,7 @@
 export const meta = {
   title: "Why I've Stopped Writing Snapshots Tests in Jest",
   subtitle: "And Why I Think You Should Stop Too",
-  date: new Date("2019-06-18T20:00:00.000Z"),
+  date: new Date("2019-06-18"),
   description:
     "I've stopped using them as I find no use maintaining useless tests. Enlighten me if you can!",
   published: true,
@@ -10,6 +10,7 @@ export const meta = {
 
 import { getPostMetadata } from "@/utils/get-metadata";
 import { PostHeader } from "@/components/post-header";
+import { PostFooter } from "@/components/post-footer";
 
 export const metadata = getPostMetadata(meta);
 
@@ -105,3 +106,5 @@ Now that we have a basic understanding of snapshot testing I can make some bold 
 3. They provide no helpful information as to how the code is used, and how it should behave. They merely show what is rendered in a given situation, without any concrete assertions to help future you/new developers understand why or how the magic of your components happens.
 
 This is my personal opinion on the subject, I'd love to hear different opinions about snapshot testing (not only in jest). Do you still write them? Have you found some enlightenment that I haven't? Please share!
+
+<PostFooter {...meta} />

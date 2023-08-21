@@ -9,7 +9,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     pre: (props) => (
       <pre
         {...props}
-        className={clsx(props.className, "w-full overflow-hidden rounded")}
+        className={clsx(props.className, "w-full overflow-hidden sm:rounded")}
       />
     ),
     a: (props) => (

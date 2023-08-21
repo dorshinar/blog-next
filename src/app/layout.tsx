@@ -24,8 +24,8 @@ export default function RootLayout({
           "min-h-screen flex flex-col gap-12 items-center bg-zinc-900 text-zinc-200 pb-2"
         )}
       >
-        <header className="h-16 flex justify-center items-center bg-zinc-800 w-full">
-          <h1 className="grow sm:max-w-3xl px-4 sm:px-8 text-2xl font-medium">
+        <header className="flex justify-center items-center w-full py-6 border-b border-zinc-200">
+          <h1 className="grow sm:max-w-3xl px-4 sm:px-8 text-3xl font-medium">
             <Link
               href="/"
               className="hover:text-emerald-500 focus-visible:text-emerald-500"

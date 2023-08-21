@@ -14,6 +14,7 @@ import Image from "next/image";
 import featured from "./cover.png";
 import { getPostMetadata } from "@/utils/get-metadata";
 import { PostHeader } from "@/components/post-header";
+import { PostFooter } from "@/components/post-footer";
 
 export const metadata = getPostMetadata(meta);
 
@@ -162,3 +163,5 @@ the autoFix key speaks for itself I believe, ESLint will try to fix all the erro
 Thank you for reading!
 
 This article is a result of a quite frustrating personal experience trying to configure ESLint with no proper guide to help me through (except for the packages’ documentations). After struggling for several hours for something that felt like it should have taken five minutes, I decided to write this article so other developers won’t face the same struggle.
+
+<PostFooter {...meta} />
