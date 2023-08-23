@@ -53,7 +53,7 @@ export function ColorShiftingBox({ root, threshold }: Props) {
     <CodeSnippetWrapper>
       {root && (
         <div className="h-[calc(100%-200px)] w-[calc(100%-200px)] min-h-[8rem] grid place-items-center bg-zinc-300 rounded text-zinc-700 absolute inset-[100px]">
-          The box will turn pink when it enters the gray rectangle!
+          The box will change color when it enters the gray rectangle!
         </div>
       )}
       <div
@@ -66,7 +66,7 @@ export function ColorShiftingBox({ root, threshold }: Props) {
             <div
               className={clsx(
                 "w-20 h-20 rounded border transition-colors duration-[3s]",
-                isIntersecting ? "bg-orange-700" : "bg-orange-200"
+                isIntersecting ? "bg-orange-500" : "bg-violet-700"
               )}
               ref={boxRef}
             />
