@@ -74,4 +74,5 @@ export const metadata: Metadata = {
     images: [profilePic],
   }),
   metadataBase: new URL("https://dorshinar.me"),
+  manifest: "/manifest.json",
 };
