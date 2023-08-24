@@ -1,4 +1,3 @@
-import { Message } from "@/components/message";
 import clsx from "clsx";
 import { LinkIcon } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
@@ -15,7 +14,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     a: (props) => (
       <a
         {...props}
-        className={clsx(props.className, "text-emerald-500 underline")}
+        className={clsx(
+          props.className,
+          "text-emerald-500 shadow-[0_2px_0_0_theme(colors.emerald.500)] hover:shadow-[0_3px_0_0_theme(colors.emerald.500)] transition-shadow",
+          "[blockquote_&]:text-zinc-200 [blockquote_&]:font-medium [blockquote_&]:shadow-[0_2px_0_0_theme(colors.sky.300)] [blockquote_&]:hover:shadow-[0_3px_0_0_theme(colors.sky.300)]"
+        )}
       />
     ),
     h2: (props) => (
@@ -54,7 +57,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         </a>
       </h2>
     ),
-    blockquote: Message,
+    blockquote: (props) => (
+      <blockquote
+        {...props}
+        className={clsx(
+          props.className,
+          "bg-sky-900 border-l-8 border-sky-500 sm:rounded p-4 -mx-4"
+        )}
+      />
+    ),
     ol: (props) => (
       <ol
         {...props}

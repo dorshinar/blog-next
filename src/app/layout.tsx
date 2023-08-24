@@ -2,7 +2,8 @@ import clsx from "clsx";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link";
+import { Link } from "@/components/Link";
+import NextLink from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,12 +27,12 @@ export default function RootLayout({
       >
         <header className="flex justify-center items-center w-full py-6 border-b border-zinc-200">
           <h1 className="grow sm:max-w-3xl px-4 sm:px-8 text-3xl font-medium">
-            <Link
+            <NextLink
               href="/"
               className="hover:text-emerald-500 focus-visible:text-emerald-500"
             >
               Dor Shinar
-            </Link>
+            </NextLink>
           </h1>
         </header>
         <main className="flex w-full flex-col items-center overflow-hidden">
